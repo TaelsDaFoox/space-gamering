@@ -120,3 +120,5 @@ spot_angle = 31.837856
 
 [node name="RigidBody3D" parent="." instance=ExtResource("3_tlwt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.05162, 4.6274633, 0.6195383)
+
+[node name="WorldInit" type="Node" parent="."]
