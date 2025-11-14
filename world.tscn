@@ -119,4 +119,4 @@ spot_range = 57.614056
 spot_angle = 31.837856
 
 [node name="RigidBody3D" parent="." instance=ExtResource("3_tlwt5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.05162, 4.6274633, 0.6195383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.05162, 4.6274633, 0.6195383)
