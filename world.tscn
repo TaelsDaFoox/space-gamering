@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4gv6003n1ose"]
+
+[ext_resource type="PackedScene" uid="uid://drq1nndo63iag" path="res://objects/player.tscn" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://dk5dxc10secu2" path="res://textures/space_lf_0.png" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://m85rhstd6v3n" path="res://objects/shipPhys.tscn" id="3_tlwt5"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_f3sb7"]
+left_to_right = 1.0
+size = Vector3(10, 5, 8.975)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tlwt5"]
+panorama = ExtResource("2_fj7yv")
+energy_multiplier = 1.5
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("PanoramaSkyMaterial_tlwt5")
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+background_mode = 2
+sky = SubResource("Sky_fj7yv")
+ambient_light_source = 2
+ambient_light_color = Color(0.019607844, 0.050980393, 0.09411765, 1)
+ambient_light_energy = 4.0
+
+[node name="World" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.082001, -0.7507324, -16.03859)
+size = Vector3(46.591736, 1.7045898, 76.61453)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.082001, -0.7507324, -37.406124)
+size = Vector3(97.56836, 1.7045898, 33.879463)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.09201, 10.220337, -37.406124)
+size = Vector3(1.5483398, 23.646729, 33.879463)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.480255, 9.9835205, -37.406124)
+size = Vector3(2.4438477, 23.173096, 33.879463)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.082001, 21.40591, -37.406124)
+size = Vector3(97.56836, 1.7045898, 33.879463)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.082001, 10.285004, -52.618668)
+size = Vector3(97.56836, 23.776062, 3.45438)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.03354, 10.285004, -22.035828)
+size = Vector3(25.665283, 23.776062, 3.45438)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.852692, 10.285004, -22.035828)
+size = Vector3(25.698975, 23.776062, 3.45438)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.082001, 21.395397, -15.7295685)
+size = Vector3(46.591736, 1.7045898, 75.99649)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.13338, 10.31781, 0.79522705)
+size = Vector3(1.806488, 23.841675, 42.9469)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.866619, 10.31781, 0.7770386)
+size = Vector3(1.806488, 23.841675, 42.983276)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60632706, 10.31781, 21.545227)
+size = Vector3(24.327072, 23.841675, 1.4468994)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.499107, 1.5019531, 13.661255)
+size = Vector3(23.958359, 3.2070313, 52)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.521514, 0.60504913, -1.185915)
+mesh = SubResource("PrismMesh_f3sb7")
+
+[node name="Player" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1110071, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tlwt5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-5.971087e-08, 0.8660254, -0.5, 0.5, 0.43301272, 0.75, 0.8660254, -0.24999996, -0.43301272, 0, 0, 0)
+visible = false
+light_energy = 3.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.081863, 22.119009, 0)
+light_energy = 32.0
+spot_range = 57.614056
+spot_angle = 64.38779
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.081863, 22.119009, -35.248547)
+light_energy = 32.0
+spot_range = 57.614056
+spot_angle = 64.38779
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -20.596684, 22.119009, -37.235477)
+light_energy = 16.0
+spot_range = 57.614056
+spot_angle = 31.837856
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 45.169033, 22.119009, -37.235477)
+light_energy = 16.0
+spot_range = 57.614056
+spot_angle = 31.837856
+
+[node name="RigidBody3D" parent="." instance=ExtResource("3_tlwt5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.05162, 4.6274633, 0.6195383)

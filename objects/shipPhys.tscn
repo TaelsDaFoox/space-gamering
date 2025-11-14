@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://m85rhstd6v3n"]
+
+[ext_resource type="Script" uid="uid://bk5btoxgikixf" path="res://objects/ship.gd" id="1_ikiwg"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_mytlq"]
+left_to_right = 1.0
+size = Vector3(1, 0.5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikiwg"]
+size = Vector3(8.703125, 3.9826355, 4.9814453)
+
+[node name="Ship" type="RigidBody3D"]
+collision_layer = 0
+script = ExtResource("1_ikiwg")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2652097, 0)
+use_collision = true
+size = Vector3(8.711914, 0.46923828, 4.9853516)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4922366, -2.2888184)
+use_collision = true
+size = Vector3(8.711914, 3.9841309, 0.40771484)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041107178, 2.1940494, -0.0040283203)
+use_collision = true
+size = Vector3(8.6297, 0.5805054, 4.977295)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0597534, -0.81602144, -0.0040283203)
+use_collision = true
+size = Vector3(0.5924072, 1.3676147, 4.977295)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7341309, 0.4922366, 2.3006253)
+use_collision = true
+size = Vector3(1.2436523, 3.9841309, 0.40771484)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1522217, 0.4922366, 0.009457111)
+use_collision = true
+size = Vector3(0.4074707, 3.9841309, 4.9900513)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8212771, 2.3006253)
+use_collision = true
+size = Vector3(8.711914, 1.3260498, 0.40771484)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8312988, 0.4922366, 2.3006253)
+use_collision = true
+size = Vector3(5.0493164, 3.9841309, 0.40771484)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8904065, -1.2721999, 2.9784856)
+mesh = SubResource("PrismMesh_mytlq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4900055, 0)
+shape = SubResource("BoxShape3D_ikiwg")
