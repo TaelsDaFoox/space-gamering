@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj8tnfpidvqnb"]
+
+[ext_resource type="Script" uid="uid://bv5vcgj5m7xb8" path="res://objects/npc.gd" id="1_ha4x0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u4wlk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r2kjw"]
+radius = 3.0
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_ha4x0")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_u4wlk")
+
+[node name="InteractArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
+shape = SubResource("SphereShape3D_r2kjw")

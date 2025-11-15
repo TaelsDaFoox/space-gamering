@@ -2,12 +2,12 @@ extends CharacterBody3D
 #@onready var camera = $Camera3D
 @onready var camPivot = $SpringArm3D
 @export var move_speed :=10
-@export var mouse_sensitivity:=0.0025
+@export var mouse_sensitivity:=0.005
 @export var gravityForce = 10.0
 @export var jumpForce = 10.0
 func _physics_process(delta: float) -> void:
 	if Global.currentVehicle:
-		camPivot.spring_length=lerpf(camPivot.spring_length,20.0,delta*30)
+		camPivot.spring_length=lerpf(camPivot.spring_length,Global.zoomDist,delta*30)
 	else:
 		camPivot.spring_length=lerpf(camPivot.spring_length,0.0,delta*30)
 	var input_dir = Input.get_vector("left","right","forward","backward")

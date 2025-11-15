@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
 		if not Global.currentVehicle and interactArea.has_overlapping_bodies():
+			Global.zoomDist=20.0
 			Global.currentVehicle=self
 			var posBuffer = player.global_position
 			var rotBuffer = player.global_rotation

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bs8lrsruxni63"]
+
+[ext_resource type="Texture2D" uid="uid://ijwwdxvhd6ph" path="res://textures/asteroidTex.png" id="1_vbxs5"]
+[ext_resource type="Texture2D" uid="uid://vjck7rg5iod3" path="res://textures/AsteroidNormal.png" id="2_pbvfi"]
+
+[resource]
+albedo_texture = ExtResource("1_vbxs5")
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_pbvfi")
+uv1_scale = Vector3(0.04, 0.04, 0.04)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 3.0314286

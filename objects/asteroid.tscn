@@ -1,14 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj1edrbkcigjb"]
+[gd_scene load_steps=4 format=3 uid="uid://dj1edrbkcigjb"]
+
+[ext_resource type="Script" uid="uid://dl4f6fimt23xo" path="res://objects/asteroid.gd" id="1_rthj0"]
+[ext_resource type="Material" uid="uid://bs8lrsruxni63" path="res://Materials/Asteroid.tres" id="2_tm8fx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4esid"]
 radius = 9.452907
 
 [node name="Asteroid" type="StaticBody3D"]
+script = ExtResource("1_rthj0")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 radius = 10.37655
 radial_segments = 5
 rings = 4
+material = ExtResource("2_tm8fx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_4esid")
