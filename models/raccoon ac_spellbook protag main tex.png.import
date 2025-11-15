@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ijwwdxvhd6ph"
-path="res://.godot/imported/asteroidTex.png-87536bf82f6c37585a98190b5f15e381.ctex"
+uid="uid://cknhc73jie7hb"
+path="res://.godot/imported/raccoon ac_spellbook protag main tex.png-fdacd9509e465ae0d65554eb5c4b2cd6.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "66e65fc574b21e367830cd398ed7aa74"
 }
 
 [deps]
 
-source_file="res://textures/asteroidTex.png"
-dest_files=["res://.godot/imported/asteroidTex.png-87536bf82f6c37585a98190b5f15e381.ctex"]
+source_file="res://models/raccoon ac_spellbook protag main tex.png"
+dest_files=["res://.godot/imported/raccoon ac_spellbook protag main tex.png-fdacd9509e465ae0d65554eb5c4b2cd6.ctex"]
 
 [params]
 

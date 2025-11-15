@@ -5,10 +5,13 @@ extends CharacterBody3D
 @export var mouse_sensitivity:=0.005
 @export var gravityForce = 10.0
 @export var jumpForce = 10.0
+@onready var playerModel = $PlayerModel
+@onready var anim = $PlayerModel/AnimationPlayer
 func _physics_process(delta: float) -> void:
 	if Global.currentVehicle:
 		camPivot.spring_length=lerpf(camPivot.spring_length,Global.zoomDist,delta*30)
 	else:
+		playerModel.rotation.y=camPivot.rotation.y+PI
 		camPivot.spring_length=lerpf(camPivot.spring_length,0.0,delta*30)
 	var input_dir = Input.get_vector("left","right","forward","backward")
 	input_dir = input_dir.rotated(-camPivot.rotation.y)
@@ -16,12 +19,17 @@ func _physics_process(delta: float) -> void:
 		input_dir=Vector2.ZERO
 	velocity.x=input_dir.x*move_speed
 	velocity.z=input_dir.y*move_speed
+	if velocity.length()>0.0:
+		anim.play("Walk",0.2,velocity.length()/3)
+	else:
+		anim.play("Idle",0.2)
 	if is_on_floor():
 		if velocity.y<0.0:
 			velocity.y=0.0
 	else:
 		velocity.y-=gravityForce*delta
 	move_and_slide()
+	playerModel.visible=camPivot.spring_length>3.0
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("lock mouse"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

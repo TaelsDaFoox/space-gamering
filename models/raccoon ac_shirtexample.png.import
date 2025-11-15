@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ijwwdxvhd6ph"
-path="res://.godot/imported/asteroidTex.png-87536bf82f6c37585a98190b5f15e381.ctex"
+uid="uid://csifqtrfkdfto"
+path.s3tc="res://.godot/imported/raccoon ac_shirtexample.png-9f73ce4fdec202e3bcb2a6086908305d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "7cc090117a7ab61e22071fa99ae5311e"
 }
 
 [deps]
 
-source_file="res://textures/asteroidTex.png"
-dest_files=["res://.godot/imported/asteroidTex.png-87536bf82f6c37585a98190b5f15e381.ctex"]
+source_file="res://models/raccoon ac_shirtexample.png"
+dest_files=["res://.godot/imported/raccoon ac_shirtexample.png-9f73ce4fdec202e3bcb2a6086908305d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

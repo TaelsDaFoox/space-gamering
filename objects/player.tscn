@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://drq1nndo63iag"]
+[gd_scene load_steps=4 format=3 uid="uid://drq1nndo63iag"]
 
 [ext_resource type="Script" uid="uid://bonjpcv7i4nqu" path="res://player.gd" id="1_eqqp1"]
+[ext_resource type="PackedScene" uid="uid://dhxm4fhpqjvp7" path="res://models/player_model.tscn" id="2_uxov2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykyjo"]
 
@@ -10,7 +11,8 @@ collision_mask = 5
 script = ExtResource("1_eqqp1")
 gravityForce = 20.0
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+[node name="PlayerModel" parent="." instance=ExtResource("2_uxov2")]
+transform = Transform3D(-0.64, 0, 5.5950576e-08, 0, 0.64, 0, -5.5950576e-08, 0, -0.64, 0, -0.99720204, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ykyjo")
@@ -20,3 +22,8 @@ spring_length = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpringArm3D/Camera3D"]
+light_energy = 2.0
+spot_range = 250.0
+spot_angle = 59.893147
