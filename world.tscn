@@ -22,7 +22,7 @@ background_mode = 2
 sky = SubResource("Sky_fj7yv")
 ambient_light_source = 2
 ambient_light_color = Color(0.019607844, 0.050980393, 0.09411765, 1)
-ambient_light_energy = 4.0
+ambient_light_energy = 6.0
 
 [node name="World" type="Node3D"]
 
