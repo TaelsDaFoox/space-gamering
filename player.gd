@@ -8,6 +8,11 @@ extends CharacterBody3D
 @onready var playerModel = $PlayerModel
 @onready var anim = $PlayerModel/AnimationPlayer
 func _physics_process(delta: float) -> void:
+	if Global.ship and abs(Global.ship.global_position-global_position).length()>150.0:
+		Global.stations.clear()
+		Global.targetPos=Vector3.ZERO
+		Global.targetStation=null
+		get_tree().reload_current_scene()
 	if Global.currentVehicle:
 		camPivot.spring_length=lerpf(camPivot.spring_length,Global.zoomDist,delta*30)
 	else:
@@ -41,3 +46,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		camPivot.rotation.x= clampf(camPivot.rotation.x,-PI/2,PI/2)
 	if event.is_action_pressed("jump") and not Global.currentVehicle:
 		velocity.y=jumpForce
+func _ready() -> void:
+	Global.player = self

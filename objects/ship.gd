@@ -7,6 +7,7 @@ extends RigidBody3D
 var player
 func _ready() -> void:
 	player = get_parent().get_node("Player")
+	Global.ship = self
 
 func _physics_process(delta: float) -> void:
 	fire.scale.x=1.5+sin((firetimer.time_left/firetimer.wait_time)*PI*8)/2

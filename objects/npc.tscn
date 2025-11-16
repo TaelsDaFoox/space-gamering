@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj8tnfpidvqnb"]
+[gd_scene load_steps=5 format=3 uid="uid://bj8tnfpidvqnb"]
 
 [ext_resource type="Script" uid="uid://bv5vcgj5m7xb8" path="res://objects/npc.gd" id="1_ha4x0"]
+[ext_resource type="PackedScene" uid="uid://d2ode4dvs1gcp" path="res://models/npc_model.tscn" id="2_r2kjw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u4wlk"]
 
@@ -9,8 +10,6 @@ radius = 3.0
 
 [node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_ha4x0")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_u4wlk")
@@ -21,3 +20,6 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
 shape = SubResource("SphereShape3D_r2kjw")
+
+[node name="PlayerModel" parent="." instance=ExtResource("2_r2kjw")]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, -0.99087524, 0)

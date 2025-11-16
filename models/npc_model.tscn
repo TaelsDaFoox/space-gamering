@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ode4dvs1gcp"]
+
+[ext_resource type="PackedScene" uid="uid://cjnxs7nc2mxa3" path="res://models/raccoon ac.glb" id="1_jtpui"]
+
+[node name="PlayerModel" instance=ExtResource("1_jtpui")]
+
+[node name="Cape" parent="Armature/Skeleton3D" index="1"]
+visible = false
+
+[node name="Shades" parent="Armature/Skeleton3D" index="3"]
+visible = false
+
+[node name="Shirt" parent="Armature/Skeleton3D" index="4"]
+visible = false
+
+[node name="Witchhat" parent="Armature/Skeleton3D" index="6"]
+visible = false
