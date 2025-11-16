@@ -128,3 +128,4 @@ script = ExtResource("4_aqk2v")
 
 [node name="NPC" parent="." instance=ExtResource("5_036b0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.179593, 1.1015615, 18.068197)
+npcType = "Sender"
