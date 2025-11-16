@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://m85rhstd6v3n"]
+[gd_scene load_steps=6 format=3 uid="uid://m85rhstd6v3n"]
 
 [ext_resource type="Script" uid="uid://bk5btoxgikixf" path="res://objects/ship.gd" id="1_ikiwg"]
+[ext_resource type="PackedScene" uid="uid://ctrsr655o3qfe" path="res://models/thrusterFire.glb" id="2_kt0jr"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_mytlq"]
 left_to_right = 1.0
@@ -90,3 +91,12 @@ spot_angle = 50.510735
 transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 0.5895238, 1.2480471, 0.02601409)
 spot_range = 4.156717
 spot_angle = 56.249996
+
+[node name="ThrusterFire" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47830272, -4.4185553)
+
+[node name="FireModel" parent="ThrusterFire" instance=ExtResource("2_kt0jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.969759)
+
+[node name="Timer" type="Timer" parent="ThrusterFire"]
+autostart = true
