@@ -4,6 +4,7 @@ var textbox = load("res://Textbox.tscn")
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
 		if not Global.currentVehicle and interactArea.has_overlapping_bodies():
+			Global.targetPos=global_position
 			Global.zoomDist=10.0
 			Global.currentVehicle=self
 			var spawn = textbox.instantiate()

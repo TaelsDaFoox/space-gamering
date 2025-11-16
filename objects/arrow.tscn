@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://xl62d8q8j38v"]
+
+[ext_resource type="Material" uid="uid://cxc235qeq8sds" path="res://Materials/arrow.tres" id="1_y283q"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rcdeh"]
+top_radius = 0.0
+bottom_radius = 0.4
+height = 1.0
+radial_segments = 8
+
+[node name="Arrow" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 3.939502e-08, -0.00265643, 0.4506265)
+radius = 0.15673828
+height = 0.8208398
+material = ExtResource("1_y283q")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -3.939502e-08, -0.0026564896, -0.4506265)
+mesh = SubResource("CylinderMesh_rcdeh")
+material = ExtResource("1_y283q")

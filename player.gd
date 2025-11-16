@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if velocity.y<0.0:
 			velocity.y=0.0
-	else:
+	elif not Global.currentVehicle:
 		velocity.y-=gravityForce*delta
 	move_and_slide()
 	playerModel.visible=camPivot.spring_length>3.0

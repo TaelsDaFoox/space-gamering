@@ -15,6 +15,7 @@ size = Vector3(2.1568909, 3.840454, 4.4396973)
 [node name="Ship" type="RigidBody3D"]
 collision_layer = 0
 script = ExtResource("1_ikiwg")
+thrustSpeed = 3.0
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
