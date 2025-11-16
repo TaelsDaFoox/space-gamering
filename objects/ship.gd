@@ -39,5 +39,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			remove_child(player)
 			get_parent().add_child(player2)
 			player2.global_position = posBuffer
-			#player2.global_rotation= rotBuffer
+			player2.global_rotation=Vector3.ZERO #rotBuffer
 			player=player2

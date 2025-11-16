@@ -1,6 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcjm6d1skho3s"]
+[gd_scene load_steps=7 format=3 uid="uid://bcjm6d1skho3s"]
 
 [ext_resource type="Script" uid="uid://b51er4sy0gihj" path="res://objects/delivery_station.gd" id="1_wctxg"]
+[ext_resource type="PackedScene" uid="uid://bj8tnfpidvqnb" path="res://objects/npc.tscn" id="2_uoxxl"]
+[ext_resource type="FontFile" uid="uid://clll0a8ers87n" path="res://fonts/FOT-Rodin Pro B.otf" id="3_cr6qw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cr6qw"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn6gc"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_cr6qw")
+uv1_scale = Vector3(1, -1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uoxxl"]
 radius = 140.67828
@@ -13,8 +24,8 @@ script = ExtResource("1_wctxg")
 size = Vector3(71.85571, 1, 84.576416)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.524963, 0, -58.012093)
-size = Vector3(38.805786, 1, 32.736282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.524963, 0, -52.64272)
+size = Vector3(38.805786, 1, 21.997536)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.097107, 40.848633)
@@ -27,6 +38,11 @@ size = Vector3(2.907837, 39.356934, 84.576416)
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.12204, 19.178467, -40.453186)
 size = Vector3(33.611633, 39.356934, 3.670044)
+
+[node name="StationLabel" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.12204, 19.178467, -42.32654)
+size = Vector3(31.30371, 30.699219, 0.001)
+material = SubResource("StandardMaterial3D_dn6gc")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030548096, 37.135803, 0)
@@ -46,3 +62,39 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.7
 light_energy = 32.0
 spot_range = 48.251907
 spot_angle = 64.38779
+
+[node name="NPC" parent="." instance=ExtResource("2_uoxxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.103605, 1.4999995, -14.180271)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="StationHeader" type="Label" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_cr6qw")
+theme_override_font_sizes/font_size = 24
+text = "STATION"
+horizontal_alignment = 1
+
+[node name="StationNum" type="Label" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("3_cr6qw")
+theme_override_font_sizes/font_size = 80
+text = "H8"
+horizontal_alignment = 1
+vertical_alignment = 1
