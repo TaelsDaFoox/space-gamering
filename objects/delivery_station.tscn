@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjm6d1skho3s"]
+
+[ext_resource type="Script" uid="uid://b51er4sy0gihj" path="res://objects/delivery_station.gd" id="1_wctxg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uoxxl"]
+radius = 140.67828
+
+[node name="DeliveryStation" type="CSGCombiner3D"]
+use_collision = true
+script = ExtResource("1_wctxg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(71.85571, 1, 84.576416)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.524963, 0, -58.012093)
+size = Vector3(38.805786, 1, 32.736282)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.097107, 40.848633)
+size = Vector3(71.85571, 39.194214, 2.8791504)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.473938, 19.178467, 0)
+size = Vector3(2.907837, 39.356934, 84.576416)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.12204, 19.178467, -40.453186)
+size = Vector3(33.611633, 39.356934, 3.670044)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030548096, 37.135803, 0)
+size = Vector3(71.91681, 3.4422607, 84.576416)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.39453, 19.080597, 0)
+size = Vector3(3.0666504, 39.161194, 84.576416)
+
+[node name="SurroundingArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SurroundingArea"]
+shape = SubResource("SphereShape3D_uoxxl")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.7520313, 22.119009, 1.6545563)
+light_energy = 32.0
+spot_range = 48.251907
+spot_angle = 64.38779
