@@ -2,5 +2,5 @@
 
 [resource]
 no_depth_test = true
-shading_mode = 0
-albedo_color = Color(0, 1, 0.5, 1)
+albedo_color = Color(1.0059327e-05, 0.7107875, 0.3492786, 1)
+metallic_specular = 0.0
