@@ -44,7 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		camPivot.rotation.y-=event.relative.x*mouse_sensitivity
 		camPivot.rotation.x-=event.relative.y*mouse_sensitivity
 		camPivot.rotation.x= clampf(camPivot.rotation.x,-PI/2,PI/2)
-	if event.is_action_pressed("jump") and not Global.currentVehicle:
+	if event.is_action_pressed("jump") and not Global.currentVehicle and is_on_floor():
 		velocity.y=jumpForce
 func _ready() -> void:
 	Global.player = self

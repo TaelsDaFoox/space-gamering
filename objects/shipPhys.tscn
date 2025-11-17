@@ -103,5 +103,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.969759)
 autostart = true
 
 [node name="ThrusterSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2145896, 0.6937349, -4.797582)
 stream = ExtResource("3_ca47d")
 volume_db = -10.0
