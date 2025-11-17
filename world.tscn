@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4gv6003n1ose"]
+[gd_scene load_steps=12 format=3 uid="uid://d4gv6003n1ose"]
 
 [ext_resource type="PackedScene" uid="uid://drq1nndo63iag" path="res://objects/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dk5dxc10secu2" path="res://textures/space_lf_0.png" id="2_fj7yv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dusf182uks5ei" path="res://world_init.gd" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bj8tnfpidvqnb" path="res://objects/npc.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://bhj21agbiopn8" path="res://main_ui.tscn" id="6_dwbse"]
+[ext_resource type="AudioStream" uid="uid://doiml4xid4xg8" path="res://audio/music/Bloxels Music ｜ ＂Lost Galaxy＂.mp3" id="7_pkg7o"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_f3sb7"]
 left_to_right = 1.0
@@ -132,3 +133,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.179593, 1.1015615, 18.0681
 npcType = "Sender"
 
 [node name="MainUI" parent="." instance=ExtResource("6_dwbse")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pkg7o")
+volume_db = -5.0
+autoplay = true
