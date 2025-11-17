@@ -16,7 +16,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if not Global.targetStation:
 					Global.deliveryExpired=false
 					selectedStation = Global.stations[randi_range(0,Global.stations.size()-1)]
-					challenge=randi_range(0,0)
+					challenge=randi_range(0,2)
 					spawn.textqueue = Global.deliveryDialogue[randi_range(0,Global.deliveryDialogue.size()-1)].replacen("[S]",selectedStation.stationName)
 					if challenge == 0:
 						spawn.textqueue=spawn.textqueue+" And deliver it QUICK, This needs to be delivered RIGHT NOW!"

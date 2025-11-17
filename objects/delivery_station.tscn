@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcjm6d1skho3s"]
+[gd_scene load_steps=8 format=3 uid="uid://bcjm6d1skho3s"]
 
 [ext_resource type="Script" uid="uid://b51er4sy0gihj" path="res://objects/delivery_station.gd" id="1_wctxg"]
 [ext_resource type="PackedScene" uid="uid://bj8tnfpidvqnb" path="res://objects/npc.tscn" id="2_uoxxl"]
@@ -13,6 +13,10 @@ transparency = 1
 albedo_texture = SubResource("ViewportTexture_cr6qw")
 uv1_scale = Vector3(1, -1, 1)
 
+[sub_resource type="PrismMesh" id="PrismMesh_cr6qw"]
+left_to_right = 1.0
+size = Vector3(10, 9.1, 40)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_uoxxl"]
 radius = 140.67828
 
@@ -22,6 +26,18 @@ script = ExtResource("1_wctxg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 size = Vector3(71.85571, 1, 84.576416)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4489746, 23.852173)
+size = Vector3(71.85571, 9.897949, 36.87207)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.210266, 9.718201, 30.370483)
+size = Vector3(25.43518, 20.436401, 23.83545)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.062187, 2.7317371, -2.9332619)
+size = Vector3(13.914017, 6.4634705, 27.82074)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.524963, 0, -52.64272)
@@ -52,6 +68,10 @@ size = Vector3(71.91681, 3.4422607, 84.576416)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.39453, 19.080597, 0)
 size = Vector3(3.0666504, 39.161194, 84.576416)
 
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13.546628, 4.8620605, 0.4175725)
+mesh = SubResource("PrismMesh_cr6qw")
+
 [node name="SurroundingArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SurroundingArea"]
@@ -64,7 +84,7 @@ spot_range = 48.251907
 spot_angle = 64.38779
 
 [node name="NPC" parent="." instance=ExtResource("2_uoxxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.103605, 1.4999995, -14.180271)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.599342, 10.39446, 24.002537)
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
