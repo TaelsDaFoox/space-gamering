@@ -10,3 +10,4 @@ var targetStation
 var ship
 var player
 var mainUI
+var deliveryExpired := false

@@ -14,12 +14,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			var spawn = textbox.instantiate()
 			if npcType == "Sender":
 				if not Global.targetStation:
+					Global.deliveryExpired=false
 					selectedStation = Global.stations[randi_range(0,Global.stations.size()-1)]
 					challenge=randi_range(0,0)
 					spawn.textqueue = Global.deliveryDialogue[randi_range(0,Global.deliveryDialogue.size()-1)].replacen("[S]",selectedStation.stationName)
 					if challenge == 0:
-						if Global.mainUI:
-							Global.mainUI.get_node("Timer").start()
 						spawn.textqueue=spawn.textqueue+" And deliver it QUICK, This needs to be delivered RIGHT NOW!"
 				else:
 					spawn.textqueue="Hey, deliver that package you're holding before you take another one!"
@@ -30,6 +29,8 @@ func _unhandled_input(event: InputEvent) -> void:
 					spawn.textqueue = Global.recieveDialogue[randi_range(0,Global.recieveDialogue.size()-1)]
 					Global.targetPos=Global.homePos
 					Global.targetStation=null
+					if Global.mainUI and not Global.mainUI.get_node("Timer").is_stopped():
+						Global.mainUI.get_node("Timer").stop()
 				else:
 					if Global.targetStation:
 						spawn.textqueue = "Huh? No, this package isn't mine... It's addressed to Station [S].".replacen("[S]",Global.targetStation.stationName)
@@ -40,6 +41,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			if npcType == "Sender" and not Global.targetStation:
 				Global.targetPos=selectedStation.npc.global_position
 				Global.targetStation = selectedStation
+				if challenge == 0:
+						if Global.mainUI:
+							Global.mainUI.get_node("Timer").start()
 			anim.play("Idle",0.2)
 			get_parent().get_node("TextboxUI").queue_free()
 			Global.currentVehicle=null
