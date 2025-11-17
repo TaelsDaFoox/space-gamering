@@ -1,10 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dscfxmve1oju4"]
 
-[ext_resource type="Texture2D" uid="uid://dy6fp31ypxgff" path="res://models/thrusterFire_thrusterblues.png" id="1_nfn1a"]
+[ext_resource type="Texture2D" uid="uid://bcsr5mo5k8sy5" path="res://textures/thrusterblues.png" id="1_nfn1a"]
 
 [resource]
-albedo_color = Color(0, 0, 0, 1)
-metallic_specular = 0.0
-emission_enabled = true
-emission_texture = ExtResource("1_nfn1a")
+shading_mode = 0
+albedo_texture = ExtResource("1_nfn1a")
 texture_filter = 0
