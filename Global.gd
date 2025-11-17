@@ -9,3 +9,4 @@ var recieveDialogue:=["Oh, that's my package! Thank you!","Hey, it finally arriv
 var targetStation
 var ship
 var player
+var mainUI

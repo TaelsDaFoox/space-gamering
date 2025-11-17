@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhj21agbiopn8"]
+
+[ext_resource type="FontFile" uid="uid://clll0a8ers87n" path="res://fonts/FOT-Rodin Pro B.otf" id="1_2ppmm"]
+[ext_resource type="Script" uid="uid://btqk2paldxvxr" path="res://main_ui.gd" id="1_w37m7"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_w37m7")
+
+[node name="DeliverLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = -11.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("1_2ppmm")
+text = "Deliver to Station 0A!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 81.0
+offset_right = -11.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("1_2ppmm")
+text = "TIME LEFT
+ 0'00\"00"
+horizontal_alignment = 1
+
+[node name="ShipControls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -73.0
+offset_right = 227.0
+offset_bottom = -1.0
+grow_vertical = 0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("1_2ppmm")
+text = "WASD - Turn
+Space - Thrust
+E - Exit"
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
